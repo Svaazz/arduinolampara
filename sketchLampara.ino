@@ -1,6 +1,9 @@
+int rele = 9;
+int msg;
+
 void setup()
 {
-   pinMode(LED, OUTPUT); //establecemos 13 como salida
+   pinMode(rele, OUTPUT); //establecemos 13 como salida
    Serial.begin(9600); //iniciando Serial
 }
  
@@ -8,15 +11,15 @@ void loop()
 {
    if (Serial.available() > 0)
    {
-      mssg = Serial.read(); //leemos el serial
+      msg = Serial.read(); //leo el serial
  
-      if(mssg == 'e')
+      if(msg == 'v')
       {
-         digitalWrite(13, HIGH); //si entra una 'e' encendemos
+         digitalWrite(rele, HIGH); //si entra una 'v' se enciende la luz
       }
-      else if(mssg == 'a')
+      else if(msg == 'b')
       {
-         digitalWrite(13, LOW); //si entra una 'a' apagamos
+         digitalWrite(rele, LOW); //si entra una 'b' se apaga
       }
    }
 }
