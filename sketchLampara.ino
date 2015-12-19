@@ -3,7 +3,7 @@ int msg;
 
 void setup()
 {
-   pinMode(rele, OUTPUT); //establecemos 13 como salida
+   pinMode(rele, OUTPUT);
    Serial.begin(9600); //iniciando Serial
 }
  
